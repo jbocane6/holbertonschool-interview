@@ -12,15 +12,12 @@ def pascal_triangle(n):
     """
     if n <= 0:
         return []
-    elif n == 1:
-        return [1]
-    elif n == 2:
-        triangle.append(pascal_triangle(n - 1))
-        return triangle.append([1, 1])
-    else:
-        pascal_triangle(n - 1)
-        triangle.append(get_floor(triangle[n - 2]))
-        return triangle
+    for x in range(1 , n+1):
+        if x == 1:
+            triangle.append([1])
+            continue
+        triangle.append(get_floor(triangle[x - 2]))
+    return triangle
 
 
 def get_floor(floor):
