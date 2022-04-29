@@ -22,13 +22,11 @@ Number of operations: 6
 
 
 def minOperations(n):
-    x = 1
     amount = 0
-    while x <= n:
-        if n % x == 0:
-            x *= 2
-            amount += 2
-        else:
-            x += x
-            amount += 1
+    minimum = 2
+    while n > 1:
+        while n % minimum == 0:
+            amount += minimum
+            n /= minimum
+        minimum += 1
     return amount
