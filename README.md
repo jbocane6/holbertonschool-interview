@@ -9,3 +9,4 @@
 # holbertonschool-interview
 
 - [0x00-pascal_triangle](https://github.com/jbocane6/holbertonschool-interview/tree/master/0x00-pascal_triangle)
+- [0x02-minimum_operations](https://github.com/jbocane6/holbertonschool-interview/tree/master/0x02-minimum_operations)
