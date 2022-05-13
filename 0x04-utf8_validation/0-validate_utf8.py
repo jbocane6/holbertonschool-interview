@@ -15,6 +15,30 @@ def validUTF8(data):
     """
     Determines if a given data set represents a valid UTF-8 encoding.
     """
+    nbrOfbytes = 0
+    for i in data:
+        mask = 1 << 7
+        if nbrOfbytes == 0:
+            while mask & i:
+                nbrOfbytes += 1
+                mask >>= 1
+            if nbrOfbytes == 0:
+                continue
+            elif nbrOfbytes == 1 or nbrOfbytes > 4:
+                return False
+        else:
+            if not (i & 1 << 7 and not (i & 1 << 6)):
+                return False
+        nbrOfbytes = nbrOfbytes - 1
+    if nbrOfbytes == 0:
+        return True
+    return False
+
+def validUtf8(self, data):
+        """
+        :type data: List[int]
+        :rtype: bool
+        """
     count = 0
     for c in data:
         if count == 0:
@@ -29,5 +53,5 @@ def validUTF8(data):
         else:
             if (c >> 6) != 0b10:
                 return False
-            count -= 1
+        count -= 1
     return count == 0
