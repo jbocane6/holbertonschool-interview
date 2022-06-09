@@ -14,7 +14,7 @@ determine the fewest number of coins needed to meet a given amount total.
 """
 
 
-def makeChange(coins, total) -> int:
+def makeChange(coins: list, total: int) -> int:
     """
     First, sort coins in a descendent way
     Then calculate the less amount of coins
