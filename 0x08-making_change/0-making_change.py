@@ -24,7 +24,6 @@ def makeChange(coins: list, total: int) -> int:
         if total // coin > 0:
             amount += total // coin
             total = total % coin
-
-    if total == 0 and amount > 0:
-        return amount
+        if total == 0 and amount > 0:
+            return amount
     return -1
