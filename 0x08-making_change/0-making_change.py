@@ -21,9 +21,9 @@ def makeChange(coins: list, total: int) -> int:
     coins.sort(reverse=True)
 
     for coin in coins:
-        if total // coin > 0:
-            amount += total // coin
-            total = total % coin
-            if total == 0 and amount > 0:
-                return amount
+        token = total // coin
+        total -= token * coin
+        amount += token
+        if total == 0:
+            return amount
     return -1
