@@ -1,5 +1,9 @@
 #!/usr/bin/python3
-"""Returns the perimeter of the island described in grid."""
+"""
+Returns the perimeter of the island described in grid.
+Task resolved in
+holbertonschool-low_level_programming/0x1C-makefiles/5-island_perimeter.py
+"""
 
 
 def island_perimeter(grid):
