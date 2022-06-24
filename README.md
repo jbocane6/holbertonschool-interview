@@ -18,3 +18,4 @@
 - [0x07-rotate_2d_matrix](https://github.com/jbocane6/holbertonschool-interview/tree/master/0x07-rotate_2d_matrix)
 - [0x08-making_change](https://github.com/jbocane6/holbertonschool-interview/tree/master/0x08-making_change)
 - [0x09-island_perimeter](https://github.com/jbocane6/holbertonschool-interview/tree/master/0x09-island_perimeter)
+- [0x0A-primegame](https://github.com/jbocane6/holbertonschool-interview/tree/master/0x0A-primegame)
