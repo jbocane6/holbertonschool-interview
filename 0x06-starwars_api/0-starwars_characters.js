@@ -7,25 +7,31 @@
 // You must use the module request
 
 // Require request which includes put() function
-const API_URL = "https://swapi-api.hbtn.io/api/films/";
+const request = require('request');
+// To request, we need to concatenate the api with the endpoint
+const url = 'https://swapi-api.hbtn.io/api/films/' + process.argv[2];
 
-const pelicula = process.argv.slice(2);
-url_con_elicula = API_URL.concat(pelicula);
-
-async function getCharacters() {
-  try {
-    const response = await fetch(url_con_elicula);
-    const characters = await response.json();
-
-    for (var i = 0; i < characters.characters.length; i++) {
-      const rutas_personajes = characters.characters[i];
-      const response = await fetch(rutas_personajes);
-      const personajes = await response.json();
-      console.log(personajes.name);
-    }
-    //console.log(characters)
-  } catch (error) {
-    console.error("no ingrese datos erroneos");
+request(url, (error, response, values) => {
+  if (error) {
+    console.log(error);
+  } else {
+    // Store the results
+    const results = JSON.parse(values).characters;
+    showResults(results, 0);
   }
+});
+
+function showResults (results, index) {
+  if (index === results.length) {
+    return;
+  }
+  request(results[index], async (error, response, values) => {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log(JSON.parse(values).name);
+      index += 1;
+      showResults(results, index);
+    }
+  });
 }
-getCharacters();
