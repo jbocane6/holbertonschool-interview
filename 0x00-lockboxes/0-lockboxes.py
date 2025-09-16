@@ -17,6 +17,9 @@ Write a method that determines if all the boxes can be opened.
 def canUnlockAll(boxes):
     """
     Determines if boxes can be opened.
+    Args: boxes (List): List of Lists of integers
+        Returns:
+            (bool): Tells whether all items in the list can be opened
     """
     position = 0
     unlocked = {}
